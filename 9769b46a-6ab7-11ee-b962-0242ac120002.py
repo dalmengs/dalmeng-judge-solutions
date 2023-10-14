@@ -1,4 +1,4 @@
-n = int(input())
+n = int(input()) // 2
 m = int(input())
 k = list(map(int, input().split()))
 
@@ -24,7 +24,7 @@ for i in range(n - 1, -1, -1):
 
 if t[0][l] == t[1][l] == 1:
     dp[0][l] = dp[1][l] = 1
-elif t[0][l] == 1 and t[0][l] == 0:
+elif t[0][l] == 1 and t[1][l] == 0:
     dp[0][l] = 0
     dp[1][l] = 1
 elif t[0][l] == 0 and t[1][l] == 1:
