@@ -33,11 +33,17 @@ int main(){
         
         // Skill 1
         next = min((int)(hp / 2) + a, x);
-        if(!vis[next]) q.push({next, cnt + 1});
+        if(!vis[next]){
+            q.push({next, cnt + 1});
+            vis[next] = true;
+        }
         
         // Skill 2
         next = max(hp - a, 0);
-        if(!vis[next]) q.push({next, cnt + 1});
+        if(!vis[next]){
+            q.push({next, cnt + 1});
+            vis[next] = true;
+        }
     }
     
     cout << max(b - a * ans, 0);
