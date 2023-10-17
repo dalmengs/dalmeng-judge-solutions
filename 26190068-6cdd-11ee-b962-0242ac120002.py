@@ -18,7 +18,7 @@ for i in range(1, 16):
     for j in range(len(s) - 1, -1, -1):
         if dp[i - 1][j + 1] != -1:
             dp[i][j] = max(dp[i][j], (dp[i - 1][j + 1] + 16**i * int(s[j])))
-        if dp[i - 1][j + 2] != -1:
+        if dp[i - 1][j + 2] != -1 and s[j] == "1" and s[j + 1] in "012345":
             dp[i][j] = max(dp[i][j], (dp[i - 1][j + 2] + 16**i * int(s[j] + s[j + 1])))
         ans = max(ans, dp[i][j])
 
