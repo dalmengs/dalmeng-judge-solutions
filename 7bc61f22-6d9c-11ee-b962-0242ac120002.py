@@ -27,9 +27,13 @@ def parse(s):
 
 ans = 0
 for i in s:
-    temp = 0
+    k = []
     for j in i:
-        temp += parse(j)
-    ans -= k if ans != 0 else -k
+        k.append(parse(j))
+    for i in range(len(k)):
+        if ans != 0 and i == 0:
+            ans -= k[i]
+            continue
+        ans += k[i]
 
 print(ans)
