@@ -22,7 +22,7 @@ for _ in range(t):
     
     k = int(q[0])
     if k == 1:
-        x, y = q[1].lower(), q[2]
+        x, y = q[1].lower(), q[2].lower()
         synonym[y] = synonym[x]
     elif k == 2:
         x, y = q[1].lower(), " ".join(q[2:])
