@@ -10,12 +10,12 @@ for i in range(1, n):
         maxH[1][i] = maxH[1][i - 1] + 1
 
 INF = 987654321
-dp = [[[INF for i in range(250)] for k in range(n)]  for j in range(2)]
+dp = [[[INF for i in range(141)] for k in range(n)]  for j in range(2)]
 
 dp[0][0][0] = dp[1][0][0] = 1
 for i in range(n):
     # 윗줄
-    for j in range(250):
+    for j in range(141):
         # 대각선에서 오는 경우
         if i - 1 >= 0:
             # 윗줄
@@ -38,7 +38,7 @@ for i in range(n):
                 dp[1][i][j] = min(dp[1][i][j], dp[1][i - j][j - 1] + 1)
 
 ans = INF
-for i in range(250):
+for i in range(141):
     ans = min(ans, dp[0][n - 1][i] + 1, dp[1][n - 1][i] + 1)
 
 print(ans if ans < INF else 0)
